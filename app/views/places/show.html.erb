@@ -56,14 +56,24 @@
         <div class="clear"></div>
 
      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+      
       <div class="modal-body">
         <%= f.input :message %>
         <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
       </div>
+
+      <div class="photo">
+        <%= simple_form_for @photo, url:@place.photos.each do |photo| %>
+          <%= f.input :caption %>
+          <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+          <% end %>
+      </div>
+
       <% end %>
     </div>
   </div>
@@ -93,3 +103,5 @@
   </div>
 <% end %>
 </div>
+
+

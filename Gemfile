@@ -75,5 +75,5 @@ gem 'devise'
 gem "geocoder"
 gem "figaro"
 gem 'will_paginate-bootstrap4'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'fog-aws'
